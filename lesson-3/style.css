@@ -1,0 +1,13 @@
+.red{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    transition-property: translate, transform;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    transition-delay: 0;
+}
+
+.red:hover{
+    transform: rotate(270deg);
+}

@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+.navigation{
+    background-color: black;
+    height: 80px;
+}
+
+.navigation ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-instagram{
+    color: black;
+    align-self: center;
+}
+
+.icon-spotify{
+    color:black;
+    align-self: center;
+}
+
+.icon-telegram{
+    color: black;
+    align-self: center;
+}
+
+.navigation p{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: larger;
+}
+
+.icons{
+    background-color: white;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    transition: background-color 700ms ease-in-out;
+}
+
+.icons:hover{
+    background-color: black;
+}
+
+i{
+    transition: color 700ms ease-in-out;
+}
+
+.icons:hover i{
+    color: white;
+}
+
+
+
+
+
+
+
