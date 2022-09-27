@@ -1,0 +1,40 @@
+.box{
+    background-color: red;
+    width:100px;
+    height: 100px;
+    position: relative;
+    top: 0;
+    left: 0;
+    animation: moving 6s ease-in-out infinite
+}
+
+@keyframes moving{
+        0% {
+            top: 0;
+            left: 0;
+            background-color: red;
+        }
+        25% {
+            top: 300px;
+            left: 0;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        50% {
+            top: 300px;
+            left: 300px;
+            background-color: green;
+            border-radius: 0%;
+        }
+        75%{
+            top: 0;
+            left: 300px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+        100% {
+            top: 0;
+            left: 0;
+            background-color: red;
+          }
+}
