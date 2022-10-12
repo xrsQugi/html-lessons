@@ -28,14 +28,30 @@
         text-align: center;
         margin-left: 0;
     }
+    /* .list_jobs{
+        width: calc((100% - 4 \ 10px) / 3);
+    } */
+    
+    .list_jobs li{
+        width: 166px;
+        height: 128px;
+        background: #F2F3F6;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc((100% - 4 * 20px) / 3);
+    
+    }
 }
 /* Medium Devices, Desktops */
 @media screen and (max-width: 992px) {
     .work img{
-        width: 260px;
-        height: 253px;
-        left: 40px;
-        top: 50px;
+        display: none;
+    }
+
+    .list_jobs{
+        gap: 20px;
     }
 }
 /* Small Devices, Tablets */
@@ -83,8 +99,7 @@
     }
 
     .work img{
-        width: 240px;
-        height: 234px
+        display: none;
     }
 
     .menu, .bar {
@@ -127,7 +142,12 @@
     #hamburger-1.is-active .line:nth-child(3){
         transform: translateY(-9px) rotate(-45deg);
     } */
+
+    .list_jobs{
+        gap: 15px;
+    }
 }
+
 /* Extra Small Devices, Phones */
 @media screen and (max-width: 480px) {
     .resume h1{
@@ -182,9 +202,24 @@
         margin-left: 22px;
     }
 
-    
+    .list_jobs li p{
+        font-weight: 300;
+        font-size: 12px;
+    }
+
+    .list_jobs{
+        gap:10px;
+    }
+
 }
 /* Custom, iPhone Retina */
 @media screen and (max-width: 320px) {
+    .list_jobs li p{
+        font-weight: 300;
+        font-size: 10px;
+    }
 
+    .list_jobs{
+        gap: 5px;
+    }
 }
