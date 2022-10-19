@@ -25,15 +25,9 @@ body{
 
 /* header */
 
-.header .row{
-    height: 155px;
-    display: flex;
-    align-items: center;
-}
-
 header svg{
-    width: 150px;
-    height: 65px;
+    width: 100px;
+    height: 50px;
 }
 
 header a{
@@ -62,11 +56,6 @@ header div a:hover{
     background-repeat: no-repeat;
 }
 
-.hero .row{
-    display: flex;
-    justify-content: center;
-}
-
 .hero h3{
     font-family: 'Montserrat';
     font-style: normal;
@@ -76,7 +65,6 @@ header div a:hover{
     text-align: center;
     letter-spacing: 0.1px;
     color: #F7F7F7;
-    margin-top: 80px;
 }
 
 .hero h1{
@@ -115,56 +103,11 @@ header div a:hover{
     letter-spacing: 0.1px;
     color: #FFFFFF;
     transition: background-color .2s ease-in-out, border .2s ease-in-out;
-    margin-top: 20px;
 }
 
 .hero button:hover{
     background-color: #FA4A0C;
     border: 1px solid #FA4A0C;
-}
-
-.deliver-btn{
-    margin-right: 50px;
-}
-
-.app{
-    margin-top: 55px;
-}
-
-
-/* phone 1 */
-.phone-1 {
-    margin-top: 70px;
-}
-
-.phone-1 .photo-phone-one{
-    display: flex;
-    justify-content: flex-start;
-}
-
-.phone-1 .phone-text-one{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-/* phone 2 */
-
-.phone-2 {
-    margin-top: 120px;
-}
-
-.phone-2 .photo-phone-two{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.phone-2 .phone-text-two{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
 }
 
 /* phones */
@@ -202,16 +145,10 @@ header div a:hover{
 /* rectangle-2 */
 
 .rectangle{
-    margin-top: 172px;
     background: url(./img/rectangle-2.png);
     background-size: cover;
     height: 516px;
     background-repeat: no-repeat;
-}
-
-.rectangle .row{
-    display: flex;
-    justify-content: center;
 }
 
 .rectangle h2{
@@ -223,7 +160,6 @@ header div a:hover{
     text-align: center;
     letter-spacing: 0.2px;
     color: #FFFFFF;
-    margin-top: 144px;
 }
 
 .rectangle h4{
@@ -235,7 +171,6 @@ header div a:hover{
     text-align: center;
     letter-spacing: 0.2px;
     color: #FFFFFF;
-    margin-top: 20px;
 }
 
 .rectangle button{
@@ -251,7 +186,6 @@ header div a:hover{
     letter-spacing: 0.2px;
     color: #FFFFFF;
     transition: background-color .2s ease-in-out, border .2s ease-in-out;
-    margin-top: 60px;
 }
 
 .rectangle button:hover{
@@ -259,26 +193,11 @@ header div a:hover{
     border: 1px solid #FA4A0C;
 }
 
-.google-btn{
-    margin-right: 50px;
-}
-
 /* footer*/
 
-.footer .row{
-    height: 236px;
-    display: flex;
-    align-items: center;
-}
-
 .footer svg{
-    width: 150px;
-    height: 65px;
-}
-
-.footer .col-9{
-    display: flex;
-    justify-content: flex-end;
+    width: 100px;
+    height: 50px;
 }
 
 .footer a{
