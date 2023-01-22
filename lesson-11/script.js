@@ -124,7 +124,7 @@
 
 // //! Code:
 // let values = ("8 4");
-// let valuesArr = values.split("");
+// const valuesArr = values.split('');
 // valuesArr.splice(1, 1);
 // let acreage = 1;
 // for (let i = 0; i < valuesArr.length; i += 1) {
@@ -138,17 +138,35 @@
 //  Порядковий номер імен та телефонів у рядках вказують на відповідність.
 //  Кількість імен та телефонів гарантовано однакова.
 
-const names = ['Артем', 'Андрій', 'Іван', 'Софія', 'Єлізавета', 'Ніка'];
-const phones = ['098 515 58 71', '068 111 43 12', '096 768 65 76', '088 657 55 01', '098 232 94 90', '098 879 54 77',];
+// //! Code:
+// const names = ['Артем', 'Андрій', 'Іван', 'Софія', 'Єлізавета', 'Ніка'];
+// const phones = ['098 515 58 71', '068 111 43 12', '096 768 65 76', '088 657 55 01', '098 232 94 90', '098 879 54 77',];
 
-for (let i = 0; i < names.length; i += 1) {
-    console.log(`Імя: ${names[i]}, телефон: ${phones[i]}`);
-}
+// for (let i = 0; i < names.length; i += 1) {
+//     console.log(`Імя: ${names[i]}, телефон: ${phones[i]}`);
+// }
+
 //? Завдання 10
-
 //  Напиши скрипт, який «розгортає» рядок (зворотний порядок букв)
 //  та виводить її в консоль.
 
-//? Завдання 11
+// //! Code:
+const str = 'гром';
+const reverse = str.split('').reverse().join(''); //робить массив по літерам, перевизначає порядок, і робить знову рядок;
+console.log(reverse);
 
+//? Завдання 11
 //  У нас є масив співробітників, Співробітник Shaw звільнився, видаліть його з масиву.
+
+// //! Code:
+const workers = ['James', 'Henry', 'Lucas', 'Charlotte', 'Harper', 'Isabella', 'Shaw', 'Amelia', 'Olivia'];
+console.log('Before changes: ', workers);
+const unemployed = 'Shaw';
+
+for (let i = 0; i < workers.length; i += 1) {
+    if(workers[i] === unemployed){
+        workers.splice(i, 1);
+        console.log('After changes: ',workers);
+        break;
+    }
+}
