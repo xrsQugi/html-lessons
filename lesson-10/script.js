@@ -1,24 +1,24 @@
-// let checkPlay = confirm("Хочешь пограти, якщо так тисни 'Ок', якщо ні 'Отмена'")
-// if (checkPlay === true){
-//     let min = Number(prompt("Введіть число від якого буде генеруватися числа"));
-//     let max = Number(prompt("Введіть число до якого буде генеруватися числа"));
-//     let generateNum = Math.round(Math.random() * (max - min) + min);
-//     //alert(generateNum);
-//     do{
-//         checkNumber = Number (prompt(`Спробуйте вгадати число від ${min} до ${max}`));
-//     } while (checkNumber !== generateNum){
-//         alert("Ви геній!");
-//     }
-// } else {
-//     alert("Перезавантажте сторінку, якщо хочете пограти знову, або продовжуйте мандри по сторінці");
-// }
+let checkPlay = confirm("Хочешь пограти, якщо так тисни 'Ок', якщо ні 'Отмена'")
+if (checkPlay === true){
+    let min = Number(prompt("Введіть число від якого буде генеруватися числа"));
+    let max = Number(prompt("Введіть число до якого буде генеруватися числа"));
+    let generateNum = Math.round(Math.random() * (max - min) + min);
+alert(generateNum);
+    do{
+        checkNumber = Number (prompt(`Спробуйте вгадати число від ${min} до ${max}`));
+    } while (checkNumber !== generateNum){
+        alert("Ви геній!");
+    }
+} else {
+    alert("Перезавантажте сторінку, якщо хочете пограти знову, або продовжуйте мандри по сторінці");
+}
 
 //?========================================================================================================
 
 // const numbers = [1, 3, 14, 18, 4, 7, 29, 6, 34];
 // const threshold = 15;
-// // Для чисел, менших ніж порогове значення, спрацьовує continue, виконання тіла
-// // припиняється і управління передається на наступну ітерацію.
+// Для чисел, менших ніж порогове значення, спрацьовує continue, виконання тіла
+// припиняється і управління передається на наступну ітерацію.
 // for (let i = 0; i < numbers.length; i += 1) {
 //   if (numbers[i] < threshold) {
 //     continue; //todo скіпає числа, які менше за threshold і йде далі по коду.

@@ -1,5 +1,5 @@
-// // Task 1
-// const min = 10;
+// Task 1
+const min = 10;
 
 if (min >= 0 && min < 15){
     console.log("перша чверть години");
@@ -11,7 +11,7 @@ if (min >= 0 && min < 15){
     console.log("четверта чверть години");
 }
 
-// // Task 2
+// Task 2
 
 const language = prompt("Яка «офіційна» назва JavaScript?");
 if (language === "ECMAScript"){
