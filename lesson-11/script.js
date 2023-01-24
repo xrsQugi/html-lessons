@@ -95,12 +95,12 @@
 // У нас є масив із зарплатами працівників, потрібно порахувати загальну суму зарплат
 
 //! Code:
-// const salaries = [200, 450, 600, 150, 300];
-// let total = 0;
-// for ( let i = 0; i < salaries.length; i += 1) {
-//     total += parseInt(salaries[i]);
-// }
-// console.log(total);
+const salaries = [200, 450, 600, 150, 300];
+let total = 0;
+for (let i = 0; i < salaries.length; i += 1) {
+    total += salaries[i];
+}
+console.log(total);
 
 //? Завдання 7
 //  У нас є кілька масивів із зарплатами працівників із різних відділів, потрібно порахувати загальну суму зарплат
@@ -151,22 +151,22 @@
 //  та виводить її в консоль.
 
 // //! Code:
-const str = 'гром';
-const reverse = str.split('').reverse().join(''); //робить массив по літерам, перевизначає порядок, і робить знову рядок;
-console.log(reverse);
+// const str = 'гром';
+// const reverse = str.split('').reverse().join(''); //робить массив по літерам, перевизначає порядок, і робить знову рядок;
+// console.log(reverse);
 
 //? Завдання 11
 //  У нас є масив співробітників, Співробітник Shaw звільнився, видаліть його з масиву.
 
 // //! Code:
-const workers = ['James', 'Henry', 'Lucas', 'Charlotte', 'Harper', 'Isabella', 'Shaw', 'Amelia', 'Olivia'];
-console.log('Before changes: ', workers);
-const unemployed = 'Shaw';
+// const workers = ['James', 'Henry', 'Lucas', 'Charlotte', 'Harper', 'Isabella', 'Shaw', 'Amelia', 'Olivia'];
+// console.log('Before changes: ', workers);
+// const unemployed = 'Shaw';
 
-for (let i = 0; i < workers.length; i += 1) {
-    if(workers[i] === unemployed){
-        workers.splice(i, 1);
-        console.log('After changes: ',workers);
-        break;
-    }
-}
+// for (let i = 0; i < workers.length; i += 1) {
+//     if(workers[i] === unemployed){
+//         workers.splice(i, 1);
+//         console.log('After changes: ',workers);
+//         break;
+//     }
+// }
