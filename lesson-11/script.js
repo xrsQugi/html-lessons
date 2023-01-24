@@ -95,12 +95,12 @@
 // У нас є масив із зарплатами працівників, потрібно порахувати загальну суму зарплат
 
 //! Code:
-const salaries = [200, 450, 600, 150, 300];
-let total = 0;
-for (let i = 0; i < salaries.length; i += 1) {
-    total += salaries[i];
-}
-console.log(total);
+// const salaries = [200, 450, 600, 150, 300];
+// let total = 0;
+// for (let i = 0; i < salaries.length; i += 1) {
+//     total += salaries[i];
+// }
+// console.log(total);
 
 //? Завдання 7
 //  У нас є кілька масивів із зарплатами працівників із різних відділів, потрібно порахувати загальну суму зарплат
@@ -163,10 +163,10 @@ console.log(total);
 // console.log('Before changes: ', workers);
 // const unemployed = 'Shaw';
 
-// for (let i = 0; i < workers.length; i += 1) {
-//     if(workers[i] === unemployed){
-//         workers.splice(i, 1);
-//         console.log('After changes: ',workers);
-//         break;
-//     }
-// }
+for (let i = 0; i < workers.length; i += 1) {
+    if(workers[i] === unemployed){
+        workers.splice(i, 1);
+        console.log('After changes: ',workers);
+        break;
+    }
+}
