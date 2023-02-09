@@ -19,10 +19,10 @@ console.log('Category:', h2Elem[0].textContent);
 console.log('Elements:', elements[0].lastElementChild.children.length);
 
 console.log('Category:', h2Elem[1].textContent);
-console.log('Elements:', elements[0].lastElementChild.children.length);
+console.log('Elements:', elements[1].lastElementChild.children.length);
 
 console.log('Category:', h2Elem[2].textContent);
-console.log('Elements:', elements[0].lastElementChild.children.length);
+console.log('Elements:', elements[2].lastElementChild.children.length);
 
 //!==========================Second method=========================
 // const ul = document.querySelectorAll('#categories>li');
