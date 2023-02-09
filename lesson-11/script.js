@@ -62,18 +62,18 @@
 
 //*  Через цикл for
 //! Code:
-// const numbers = [2, 17, 94, 1, -20, -1, -100, 23, -40, 37, -50];
-// let min = numbers[0];
-// let max = min;
-// for (let i = 0; i < numbers.length; i += 1){
-//     if (numbers[i] > max) {
-//         max = numbers[i]; //* например сначала макс было 2, потом зашло число 17 > 2 => max теперь равен 17, но min так и равен 2
-//     } else if(numbers[i] < min) {
-//         min = numbers[i];
-//     }
-// }
-//console.log("Min:", min);
-//console.log("Max:", max);
+const numbers = [2, 17, 94, 1, -20, -1, -100, 23, -40, 37, -50];
+let min = numbers[0];
+let max = min;
+for (let i = 0; i < numbers.length; i += 1){
+    if (numbers[i] > max) {
+        max = numbers[i]; //* например сначала макс было 2, потом зашло число 17 > 2 => max теперь равен 17, но min так и равен 2
+    } else if(numbers[i] < min) {
+        min = numbers[i];
+    }
+}
+console.log("Min:", min);
+console.log("Max:", max);
 
 
 //*  Через цикл for...of
