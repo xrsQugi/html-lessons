@@ -44,3 +44,15 @@ button[data-action="increment"]:hover{
     border-radius: 5px;
     border: 1px solid black;
 }
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: large;
+    font-family: 'Roboto';
+}
