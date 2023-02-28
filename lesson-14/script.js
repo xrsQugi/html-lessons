@@ -25,9 +25,11 @@ const outputText = document.querySelector('#name-output');
 
 const setOutput = (event) => {
     outputText.textContent = event.currentTarget.value;
-    if (outputText.textContent.trim() === '') {
+    if (outputText.textContent === " " || outputText.textContent === " ") {
         outputText.textContent = 'Anonymous';
     }
 }
 
 inputText.addEventListener("input", setOutput);
+
+//outputText.textContent.trim() === '' 
