@@ -1,0 +1,77 @@
+.widget {
+    width: 280px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.widget p {
+    width: 200px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+
+
+.change-color{
+    border: 0;
+    width: 200px;
+    height: 44px;
+    border-radius: 31px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+
+.toggle-pill-color input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-pill-color input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 28px;
+    border-radius: 50px;
+    background: #e84d4d;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.toggle-pill-color input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #fff;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+  .toggle-pill-color input[type="checkbox"]:checked + label {
+    background: #47cf73;
+}
+
+.toggle-pill-color input[type="checkbox"]:checked + label:before {
+    left: 1.6em;
+}
+
+.toggle-pill-dark input[type="checkbox"] {
+    display: none;
+}
