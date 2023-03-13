@@ -31,5 +31,3 @@ const setOutput = (event) => {
 }
 
 inputText.addEventListener("input", setOutput);
-
-//outputText.textContent.trim() === '' 
