@@ -5,10 +5,10 @@ const span = document.querySelector(".color")
 const btnChangeColor = document.querySelector(".change-color")
 const divWidget = document.querySelector(".widget");
 
-if (document.body.style.backgroundColor = '#FFFFFF') {
-    divWidget.style.backgroundColor = '#D9D9D9';
-    btnChangeColor.style.backgroundColor = '#FFFFFF';
-}
+// if (document.body.style.backgroundColor = '#FFFFFF') {
+//     divWidget.style.backgroundColor = '#D9D9D9';
+//     btnChangeColor.style.backgroundColor = '#FFFFFF';
+// }
 
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
@@ -20,8 +20,8 @@ const changeColorOnClick = () => {
     color = getRandomHexColor();
     span.textContent = color;
     document.body.style.backgroundColor = color;
-    divWidget.style.backgroundColor = '#FFFFFF';
-    btnChangeColor.style.backgroundColor = '#D9D9D9';
+    // divWidget.style.backgroundColor = '#FFFFFF';
+    // btnChangeColor.style.backgroundColor = '#D9D9D9';
 }
 
 //!pill ===============================================================
