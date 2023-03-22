@@ -72,6 +72,9 @@ function win() {
 
 		else if (count == 9) {
 			res.innerText = 'Draw';
+			for(let i = 0; i < fields.length; i++){
+				fields[i].classList.add('active');
+			}
 			game.removeEventListener('click', init);
 		}
 	}
