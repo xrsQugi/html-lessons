@@ -123,6 +123,11 @@ span:nth-child(16) a:after{
     content: "Lesson-16";
 }
 
+span:nth-child(17) a:before,
+span:nth-child(17) a:after{
+    content: "Lesson-17";
+}
+
 span a:before{
     color: #fff;
     background: #000;
