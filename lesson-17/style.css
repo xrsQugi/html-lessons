@@ -25,16 +25,35 @@ body{
     height: 372px;
     display: flex;
     flex-wrap: wrap;
+    border: 2px solid #b5c0ce;
+    background-color: #b5c0ce;
+    border-radius: 20px;
 }
 
 .field {
     width: 120px;
     height: 120px;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #b5c0ce;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.field:nth-child(1){
+    border-top-left-radius: 20px;
+}
+
+.field:nth-child(3){
+    border-top-right-radius: 20px;
+}
+
+.field:nth-child(7){
+    border-bottom-left-radius: 20px;
+}
+
+.field:nth-child(9){
+    border-bottom-right-radius: 20px;
 }
 
 .new-game{
@@ -53,12 +72,12 @@ body{
 }
 
 .cross, .circle {
-    fill: black;
+    fill: rgb(0, 0, 0);
     height: 80px;
     width: 80px;
     animation: draw 1s forwards;
 }
 
 .active{
-    background-color: aqua;
+    background-color: #709EDC;
 }
