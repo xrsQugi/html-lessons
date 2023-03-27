@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter';
+    font-weight: 400;
+}
+
+body{
+	background-color: white;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main{
+	width: 100%;
+	height: 100vh;
+}
+
+.stopwatch{
+	flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+}
+
+.stopwatch h2{
+	font-size: 60px;
+	margin: 35px;
+    line-height: 97px;
+    color: #000000;
+	width: 350px;
+}
+
+.stopwatch .point{
+    color: #4265BD;
+}
+
+.controls button{
+	padding: 10px 40px;
+    background-color: #4265BD;
+    border-radius: 10px;
+	font-size: 25px;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: background-color .2s ease-in-out;
+}
+
+.controls button:hover{
+    background-color: #263B72;
+}
+
