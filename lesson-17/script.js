@@ -1,9 +1,9 @@
-//!-----Cells-----
+//!----- Cells -----
 const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
 
-//!-----Statistic-----
+//!----- Statistic -----
 const winX = document.querySelector(".x-win-count");
 const drawCount = document.querySelector(".draw-count");
 const winO = document.querySelector(".o-win-count");
@@ -13,7 +13,7 @@ const stat = {
     O: 0
 }
 
-//!-----Выиграшные комбинации-----
+//!----- Выиграшные комбинации -----
 const winCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -25,12 +25,15 @@ const winCombinations = [
     [2, 4, 6]
 ];
 
-//!-----Клетки поля изначально пустые-----
+let cross = '<svg class="cross"><use href="./symbol-defs.svg#icon-cross"></use></svg>';
+let circle = '<svg class="circle"><use href="./symbol-defs.svg#icon-circle"></use></svg>';
+
+//!----- Клетки поля изначально пустые -----
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = false;
 
-//!-----Иницилизация игры-----
+//!----- Иницилизация игры -----
 function initializeGame(){
     cells.forEach(cells => cells.addEventListener("click", cellClicked));
     restartBtn.addEventListener("click", restartGame);
@@ -38,7 +41,7 @@ function initializeGame(){
     running = true;
 }
 
-//!-----Отслеживает каждый клик по пустому полю-----
+//!----- Отслеживает каждый клик по пустому полю -----
 function cellClicked(){
     const cellIndex = this.getAttribute("cellIndex");
     
@@ -50,10 +53,16 @@ function cellClicked(){
     checkWinner();
 }
 
-//!-----Заменяет в массиве options пустые места на текущего игрока ( "O" или "X")-----
+//!----- Заменяет в массиве options пустые места на текущего игрока ( "O" или "X") -----
 function updateCell(cell, index){
     options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
+    if(currentPlayer === "X"){
+        cell.innerHTML = cross;
+    }
+    else{
+        cell.innerHTML = circle;
+    }
+    // cell.textContent = currentPlayer;
 }
 
 //!-----Меняет каждый раз текущего игрока-----
@@ -62,7 +71,7 @@ function changePlayer(){
     statusText.textContent = `${currentPlayer}'s turn`;
 }
 
-//!-----После каждого хода проверяет победу-----
+//!----- После каждого хода проверяет победу -----
 function checkWinner(){
     let roundWon = false;
     
@@ -72,6 +81,9 @@ function checkWinner(){
         const cellB = options[condition[1]];
         const cellC = options[condition[2]];
 
+        //!----- Проверяет клетки, если пустые ничего не делает, -----
+        //!----- если они не пустые и одинаковые, -----
+        //!----- то добавляет выиграшным клеткам стиль победы -----
         if (cellA == "" || cellB == "" || cellC == ""){
             continue;
         }
@@ -96,6 +108,7 @@ function checkWinner(){
         // }
     }
     
+    //!----- Если победа, проверяет чья она и обновляет статиску -----
     if(roundWon){
         statusText.textContent = `${currentPlayer} wins!`;
         running = false;
@@ -106,7 +119,8 @@ function checkWinner(){
             stat.O += 1;
             winO.textContent = stat.O;
         }
-    }
+    } 
+    //!----- Если ничья, обновляет статиску и подсвечивает все клетки-----
     else if(!options.includes("")){
         statusText.textContent = `Draw!`;
         running = false;
@@ -114,12 +128,13 @@ function checkWinner(){
         drawCount.textContent = stat.D;
         cells.forEach(cells => cells.classList.add('draw'));
     }
+    //!----- Если не ничья и не победа, то игра продолжается-----
     else{
         changePlayer();
     }
 }
 
-//!-----Кнопка -----
+//!----- Кнопка, которая обновляет все -----
 function restartGame(){
     currentPlayer = "X";
     options = ["", "", "", "", "", "", "", "", ""];
