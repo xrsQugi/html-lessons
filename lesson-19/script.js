@@ -1,56 +1,153 @@
-const display = document.querySelector('.display');
-const startBtn = document.querySelector('.start');
-const stopBtn = document.querySelector('.stop');
-const resetBtn = document.querySelector('.reset');
+//!----- Cells -----
+const cells = document.querySelectorAll(".cell");
+const statusText = document.querySelector("#statusText");
+const restartBtn = document.querySelector("#restartBtn");
 
-// let miliseconds = 0;
-// let seconds = 0;
-// let minutes = 0;
-// let hours = 0;
-[miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-
-//! обьявим переменую с помощью,
-//! которой мы не сможем два раза нажимать на одну и туже кнопку "Start"
-let stopwatch = null;
-
-function start(){
-    miliseconds += 1;
-    if (miliseconds === 100) {
-        miliseconds = 0;
-        seconds += 1;
-    }
-    if(seconds === 60){
-        seconds = 0;
-        minutes += 1;
-    }
-    if(minutes === 60){
-        minutes = 0;
-        hours += 1;
-    }
-    
-    //! Таким способом мы предовратим ошибку, перезаписывания одной и той же переменной,
-    //! Сначала "0 + 1", а дальше -> "01 + 1 = 011" -> "011 + 1 = 0111"
-    let h = hours < 10 ? "0" + hours : hours;
-    let m = minutes < 10 ? "0" + minutes : minutes;
-    let s = seconds < 10 ? "0" + seconds : seconds;
-    let ms = miliseconds < 10 ? "0" + miliseconds : miliseconds;
-    display.innerHTML = `${h}:${m}:${s}<span class="point">:</span>${ms}`;
+//!----- Statistic -----
+const winX = document.querySelector(".x-win-count");
+const drawCount = document.querySelector(".draw-count");
+const winO = document.querySelector(".o-win-count");
+const stat = {
+    X: 0,
+    D: 0,
+    O: 0
 }
 
-startBtn.addEventListener('click', () => {
-    if(stopwatch !== null){
-        clearInterval(stopwatch);
+//!----- Выиграшные комбинации -----
+const winCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+let cross = '<svg class="cross"><use href="./symbol-defs.svg#icon-cross"></use></svg>';
+let circle = '<svg class="circle"><use href="./symbol-defs.svg#icon-circle"></use></svg>';
+
+//!----- Клетки поля изначально пустые -----
+let options = ["", "", "", "", "", "", "", "", ""];
+let currentPlayer = "X";
+let running = false;
+
+//!----- Иницилизация игры -----
+function initializeGame(){
+    cells.forEach(cells => cells.addEventListener("click", cellClicked));
+    restartBtn.addEventListener("click", restartGame);
+    statusText.textContent = `${currentPlayer}'s turn`;
+    running = true;
+}
+
+//!----- Отслеживает каждый клик по пустому полю -----
+function cellClicked(){
+    const cellIndex = this.getAttribute("cellIndex");
+    
+    if(options[cellIndex] != "" || !running){
+        return;
     }
-    stopwatch = setInterval(start, 10);
-})
+    
+    updateCell(this, cellIndex);
+    checkWinner();
+}
 
-stopBtn.addEventListener('click', () => {
-    clearInterval(stopwatch);
-    console.log('stopwatch :>> ', stopwatch);
-})
+//!----- Заменяет в массиве options пустые места на текущего игрока ( "O" или "X") -----
+function updateCell(cell, index){
+    options[index] = currentPlayer;
+    if(currentPlayer === "X"){
+        cell.innerHTML = cross;
+    }
+    else{
+        cell.innerHTML = circle;
+    }
+    // cell.textContent = currentPlayer;
+}
 
-resetBtn.addEventListener('click', () => {
-    [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-    display.innerHTML = '00:00:00<span class="point">:</span>00';
-    clearInterval(stopwatch);
-})
+//!-----Меняет каждый раз текущего игрока-----
+function changePlayer(){
+    currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    statusText.textContent = `${currentPlayer}'s turn`;
+}
+
+//!----- После каждого хода проверяет победу -----
+function checkWinner(){
+    let roundWon = false;
+    
+    for(let i = 0; i < winCombinations.length; i += 1){
+        const condition = winCombinations[i];
+        const cellA = options[condition[0]];
+        const cellB = options[condition[1]];
+        const cellC = options[condition[2]];
+
+        //!----- Проверяет клетки, если пустые ничего не делает, -----
+        //!----- если они не пустые и одинаковые, -----
+        //!----- то добавляет выиграшным клеткам стиль победы -----
+        if (cellA == "" || cellB == "" || cellC == ""){
+            continue;
+        }
+        else if(cellA == cellB && cellB == cellC){
+            cells[condition[0]].classList.add('win');
+            cells[condition[1]].classList.add('win');
+            cells[condition[2]].classList.add('win');
+            roundWon = true;
+            break;
+        }
+        // const condition = winCombinations[i];
+        // const cellA = options[condition[0]];
+        // const cellB = options[condition[1]];
+        // const cellC = options[condition[2]];
+    
+        // if(cellA == "" || cellB == "" || cellC == ""){
+        //     continue;
+        // }
+        // if(cellA == cellB && cellB == cellC){
+        //     roundWon = true;
+        //     break;
+        // }
+    }
+    
+    //!----- Если победа, проверяет чья она и обновляет статиску -----
+    if(roundWon){
+        statusText.textContent = `${currentPlayer} wins!`;
+        running = false;
+        if (currentPlayer === "X"){ 
+            stat.X += 1;
+            winX.textContent = stat.X;
+        } else{
+            stat.O += 1;
+            winO.textContent = stat.O;
+        }
+    } 
+    //!----- Если ничья, обновляет статиску и подсвечивает все клетки-----
+    else if(!options.includes("")){
+        statusText.textContent = `Draw!`;
+        running = false;
+        stat.D += 1;
+        drawCount.textContent = stat.D;
+        cells.forEach(cells => cells.classList.add('draw'));
+    }
+    //!----- Если не ничья и не победа, то игра продолжается-----
+    else{
+        changePlayer();
+    }
+}
+
+//!----- Кнопка, которая обновляет все -----
+function restartGame(){
+    currentPlayer = "X";
+    options = ["", "", "", "", "", "", "", "", ""];
+    statusText.textContent = `${currentPlayer}'s turn`;
+    cells.forEach((cell) => {
+        cell.textContent = "";
+        cell.classList.remove('win');
+        cell.classList.remove('draw');
+    })
+    // cells.forEach(cells => cells.textContent = "");
+    // cells.forEach(cells => cells.classList.remove('win'));
+    // cells.forEach(cells => cells.classList.remove('draw'));
+    running = true;
+}
+
+initializeGame();

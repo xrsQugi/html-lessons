@@ -138,6 +138,11 @@ span:nth-child(19) a:after{
     content: "Lesson-19";
 }
 
+span:nth-child(20) a:before,
+span:nth-child(20) a:after{
+    content: "Lesson-20";
+}
+
 span a:before{
     color: #fff;
     background: #000;

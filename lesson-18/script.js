@@ -1,48 +1,56 @@
-const time = document.querySelector('#clock_face');
-const startBtn = document.querySelector('#start');
-const stopBtn = document.querySelector('#stop');
-const resetBtn = document.querySelector('#reset');
+const display = document.querySelector('.display');
+const startBtn = document.querySelector('.start');
+const stopBtn = document.querySelector('.stop');
+const resetBtn = document.querySelector('.reset');
 
-let seconds = 0;
-let interval = null;
+// let miliseconds = 0;
+// let seconds = 0;
+// let minutes = 0;
+// let hours = 0;
+[miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
 
-function timer(){
-    seconds += 1;
+//! обьявим переменую с помощью,
+//! которой мы не сможем два раза нажимать на одну и туже кнопку "Start"
+let stopwatch = null;
 
-    let hours = Math.floor(seconds / 3600);
-    let mins = Math.floor((seconds - (hours*3600))/ 60);
-    let secs = seconds % 60;
-
-    if(secs < 10){
-        secs = '0' + secs;
+function start(){
+    miliseconds += 1;
+    if (miliseconds === 100) {
+        miliseconds = 0;
+        seconds += 1;
     }
-    if(mins < 10){
-        mins = '0' + mins;
+    if(seconds === 60){
+        seconds = 0;
+        minutes += 1;
     }
-    if(hours < 10){
-        hours = '0' + hours;
+    if(minutes === 60){
+        minutes = 0;
+        hours += 1;
     }
-    time.innerText = `${hours}:${mins}:${secs}`;
+    
+    //! Таким способом мы предовратим ошибку, перезаписывания одной и той же переменной,
+    //! Сначала "0 + 1", а дальше -> "01 + 1 = 011" -> "011 + 1 = 0111"
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+    let ms = miliseconds < 10 ? "0" + miliseconds : miliseconds;
+    display.innerHTML = `${h}:${m}:${s}<span class="point">:</span>${ms}`;
 }
 
-function startTimer(){
-    if (interval) {
-        return;
+startBtn.addEventListener('click', () => {
+    if(stopwatch !== null){
+        clearInterval(stopwatch);
     }
-    interval = setInterval(timer, 1000);
-}
+    stopwatch = setInterval(start, 10);
+})
 
-function stopTimer(){
-    clearInterval(interval);
-    interval = null;
-}
+stopBtn.addEventListener('click', () => {
+    clearInterval(stopwatch);
+    console.log('stopwatch :>> ', stopwatch);
+})
 
-function resetTimer() {
-    seconds = 0;
-    stopTimer();
-    time.innerText = '00:00:00';
-}
-
-startBtn.addEventListener('click', startTimer);
-stopBtn.addEventListener('click', stopTimer);
-resetBtn.addEventListener('click', resetTimer);
+resetBtn.addEventListener('click', () => {
+    [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    display.innerHTML = '00:00:00<span class="point">:</span>00';
+    clearInterval(stopwatch);
+})
