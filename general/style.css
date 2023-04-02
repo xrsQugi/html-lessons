@@ -45,102 +45,102 @@ span a:after{
 
 span:nth-child(1) a:before,
 span:nth-child(1) a:after{
-    content: "Lesson-1";
+    content: "Navigation";
 }
 
 span:nth-child(2) a:before,
 span:nth-child(2) a:after{
-    content: "Lesson-2";
+    content: "Hover menu";
 }
 
 span:nth-child(3) a:before,
 span:nth-child(3) a:after{
-    content: "Lesson-3";
+    content: "Rotate animation";
 }
 
 span:nth-child(4) a:before,
 span:nth-child(4) a:after{
-    content: "Lesson-4";
+    content: "Move animation";
 }
 
 span:nth-child(5) a:before,
 span:nth-child(5) a:after{
-    content: "Lesson-5";
+    content: "Find job";
 }
 
 span:nth-child(6) a:before,
 span:nth-child(6) a:after{
-    content: "Lesson-6";
+    content: "Number generator";
 }
 
 span:nth-child(7) a:before,
 span:nth-child(7) a:after{
-    content: "Lesson-7";
+    content: "Number-methods";
 }
 
 span:nth-child(8) a:before,
 span:nth-child(8) a:after{
-    content: "Lesson-8";
+    content: "Prompts";
 }
 
 span:nth-child(9) a:before,
 span:nth-child(9) a:after{
-    content: "Lesson-9";
+    content: "Guess number";
 }
 
 span:nth-child(10) a:before,
 span:nth-child(10) a:after{
-    content: "Lesson-10";
+    content: "Cycles for";
 }
 
 span:nth-child(11) a:before,
 span:nth-child(11) a:after{
-    content: "Lesson-11";
+    content: "Object iteration";
 }
 
 span:nth-child(12) a:before,
 span:nth-child(12) a:after{
-    content: "Lesson-12";
+    content: "QuerySelector";
 }
 
 span:nth-child(13) a:before,
 span:nth-child(13) a:after{
-    content: "Lesson-13";
+    content: "Counter";
 }
 
 span:nth-child(14) a:before,
 span:nth-child(14) a:after{
-    content: "Lesson-14";
+    content: "ChangeColor";
 }
 
 span:nth-child(15) a:before,
 span:nth-child(15) a:after{
-    content: "Lesson-15";
+    content: "NodeJs";
 }
 
 span:nth-child(16) a:before,
 span:nth-child(16) a:after{
-    content: "Lesson-16";
+    content: "Stopwatch";
 }
 
 span:nth-child(17) a:before,
 span:nth-child(17) a:after{
-    content: "Lesson-17";
+    content: "Stopwatch 2";
 }
 
 span:nth-child(18) a:before,
 span:nth-child(18) a:after{
-    content: "Lesson-18";
+    content: "Tic Tac Toe";
 }
 
 span:nth-child(19) a:before,
 span:nth-child(19) a:after{
-    content: "Lesson-19";
+    content: "Promise";
 }
 
 span:nth-child(20) a:before,
 span:nth-child(20) a:after{
-    content: "Lesson-20";
+    content: "Promise 2";
 }
 
 span a:before{
