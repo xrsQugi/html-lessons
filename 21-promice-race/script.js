@@ -21,7 +21,7 @@ function onStart() {
     const promises = horses.map(run);
   
     updateWinnerField("");
-    updateProgressField("Race has begun, bids are not accepted! 🤖");
+    updateProgressField("Race has begun, bids are not accepted! 🐎");
     determineWinner(promises);
     waitForAll(promises);
 }
@@ -44,7 +44,7 @@ function getRandomTime(min, max) {
 //! Promise.race([]) для ожидания первого выполнившегося промиса
 function determineWinner(horsesP) {
     Promise.race(horsesP).then(({ horse, time }) => {
-      updateWinnerField(`Horse "${horse}" has won and finished in ${Math.floor(time/60)} seconds🎉`);
+      updateWinnerField(`Horse "${horse}" has won and finished in ${Math.floor(time/60)} seconds 🏆`);
       updateResultsTable({ horse, time, raceCounter });
     });
 }
@@ -52,7 +52,7 @@ function determineWinner(horsesP) {
 //! Promise.all([]) для ожидания всех промисов
 function waitForAll(horsesP) {
     Promise.all(horsesP).then(() => {
-      updateProgressField("Race is over, bids are being accepted📝");
+      updateProgressField("Race is over, bids are being accepted 🤠");
     });
 }
 
