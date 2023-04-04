@@ -143,6 +143,11 @@ span:nth-child(20) a:after{
     content: "Promise 2";
 }
 
+span:nth-child(21) a:before,
+span:nth-child(21) a:after{
+    content: "Promice race";
+}
+
 span a:before{
     color: #fff;
     background: #000;
