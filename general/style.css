@@ -148,6 +148,11 @@ span:nth-child(21) a:after{
     content: "Promice race";
 }
 
+span:nth-child(22) a:before,
+span:nth-child(22) a:after{
+    content: "Api fetch";
+}
+
 span a:before{
     color: #fff;
     background: #000;
