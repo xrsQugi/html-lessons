@@ -153,6 +153,11 @@ span:nth-child(22) a:after{
     content: "Api fetch";
 }
 
+span:nth-child(23) a:before,
+span:nth-child(23) a:after{
+    content: "Api countries";
+}
+
 span a:before{
     color: #fff;
     background: #000;
