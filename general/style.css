@@ -6,9 +6,11 @@ body{
     display: flex;
     height: 100vh;
     align-items: center;
-    background:url(./background.jpg);
+    background:url(./illustration.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-color: #210011;
 }
 
 span{
@@ -34,11 +36,11 @@ span a:after{
     position: absolute;
     content: "Lesson-1";
     height: 55px;
-    width: 180px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 5px solid black;
+    border: 4px solid rgb(255, 255, 255);
     box-sizing: border-box;
     border-radius: 5px;
 }
@@ -159,8 +161,8 @@ span:nth-child(23) a:after{
 }
 
 span a:before{
-    color: #fff;
-    background: #000;
+    color: #000000;
+    background-color: #ffffff88;
     transform: rotateY(0deg) translateZ(25px);
 }
 
