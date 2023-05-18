@@ -160,6 +160,16 @@ span:nth-child(23) a:after{
     content: "Api countries";
 }
 
+span:nth-child(24) a:before,
+span:nth-child(24) a:after{
+    content: "Async await";
+}
+
+span:nth-child(24) a:before,
+span:nth-child(24) a:after{
+    content: "Select country";
+}
+
 span a:before{
     color: #000000;
     background-color: #ffffff88;
