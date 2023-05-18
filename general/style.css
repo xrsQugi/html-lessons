@@ -165,8 +165,8 @@ span:nth-child(24) a:after{
     content: "Async await";
 }
 
-span:nth-child(24) a:before,
-span:nth-child(24) a:after{
+span:nth-child(25) a:before,
+span:nth-child(25) a:after{
     content: "Select country";
 }
 
